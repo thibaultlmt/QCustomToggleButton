@@ -1,21 +1,23 @@
-#include "Dialog.h"
+#include "QSandBoxDialog.h"
 
 #include <QHBoxLayout>
 
-Dialog::Dialog(QWidget *parent)
+QSandBoxDialog::QSandBoxDialog(QWidget *parent)
     : QDialog(parent),
       m_firstButton(nullptr),
       m_secondButton(nullptr)
 {
-    setStyleSheet("background-color: white; border 1px solid red;");
+    Qt::WindowFlags flags = Qt::Dialog
+                | Qt::WindowTitleHint
+                | Qt::WindowSystemMenuHint
+                | Qt::WindowMinimizeButtonHint
+                | Qt::WindowCloseButtonHint
+                | Qt::CustomizeWindowHint;
 
-    setWindowFlags(Qt::FramelessWindowHint| Qt::WindowSystemMenuHint);
-    // to fix taskbar minimize feature
-    setWindowFlags(windowFlags() | Qt::WindowMinimizeButtonHint);
+    flags = flags & ~Qt::Window;
 
-    //setAttribute(Qt::WA_TranslucentBackground, true);
-
-    setWindowTitle("TEST");
+    setWindowFlags(flags);
+    setFocus();
 
     initLayout();
 
@@ -26,7 +28,7 @@ Dialog::Dialog(QWidget *parent)
         connect(m_secondButton, SIGNAL(toggled(bool)), m_secondButton, SLOT(onToggleAsked(bool)));
 }
 
-Dialog::~Dialog()
+QSandBoxDialog::~QSandBoxDialog()
 {
 
 }
@@ -35,7 +37,7 @@ Dialog::~Dialog()
 *     PRIVATE     *
 ******************/
 
-void Dialog::initLayout()
+void QSandBoxDialog::initLayout()
 {
     setContentsMargins(20,20,20,20);
 
@@ -43,12 +45,12 @@ void Dialog::initLayout()
     mainLayout->setAlignment(Qt::AlignCenter);
     mainLayout->setSpacing(5);
 
-    QPixmap firstPixmap("Valide/2x/baseline_check_circle_black_24dp.png");
+    QPixmap firstPixmap(":/Icons/valid");
     m_firstButton = new QCustomToggleButton(firstPixmap);
     m_firstButton->setColor(eMode::OFF, QColor("#C6C6C6"));
     m_firstButton->setColor(eMode::ON, QColor("#1ABA22"));
 
-    QPixmap secondPixmap("Corbeille/2x/baseline_delete_black_24dp.png");
+    QPixmap secondPixmap(":/Icons/trash");
     m_secondButton = new QCustomToggleButton(secondPixmap);
     m_secondButton->setColor(eMode::OFF, QColor("#C6C6C6"));
     m_secondButton->setColor(eMode::ON, QColor("#BA1A1A"));

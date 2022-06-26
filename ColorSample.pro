@@ -13,7 +13,6 @@ CONFIG += c++11
 TARGET = ColorSample
 TEMPLATE = app
 
-
 #Destination directory
 DESTDIR = $$_PRO_FILE_PWD_/bin
 
@@ -23,10 +22,5 @@ MOC_DIR = $$_PRO_FILE_PWD_/moc
 #Objects directory
 OBJECTS_DIR = $$_PRO_FILE_PWD_/obj
 
-
-SOURCES += main.cpp\
-        Dialog.cpp \
-    QCustomToggleButton.cpp
-
-HEADERS  += Dialog.h \
-    QCustomToggleButton.h
+# Sources
+include(ColorSample.pri)

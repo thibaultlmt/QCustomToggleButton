@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/"/>
+    <qresource prefix="/Style">
+        <file alias="style.css">style.css</file>
+    </qresource>
+    <qresource prefix="/Icons">
+        <file alias="trash">Icons/Trash.png</file>
+        <file alias="valid">Icons/Valid.png</file>
+    </qresource>
+    <qresource prefix="/AppIcon">
+        <file alias="appIcon">Icons/Engineering.png</file>
+    </qresource>
+    <qresource prefix="/Fonts">
+        <file alias="Poppins-Black">Fonts/Poppins-Black.ttf</file>
+        <file alias="Poppins-Medium">Fonts/Poppins-Medium.ttf</file>
+        <file alias="Poppins-Regular">Fonts/Poppins-Regular.ttf</file>
+        <file alias="Poppins-SemiBold">Fonts/Poppins-SemiBold.ttf</file>
+    </qresource>
+</RCC>

@@ -12,7 +12,8 @@ QCustomToggleButton::QCustomToggleButton(QPixmap pixmap, QWidget* parent)
     this->setCheckable(true);
     this->setFlat(true);
 
-    setMinimumSize(m_pixmap.width() + 4, m_pixmap.height() + 4);
+    setMinimumSize(m_pixmap.width() + 4, pixmap.height() + 4);
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     m_currentMode = eMode::OFF;
 }

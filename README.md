@@ -1,2 +1,2 @@
 # QCustomToggleButton
-[[https://github.com/thibaultlmt/QCustomToggleButton/blob/master/Output/output.png|alt=output]]
+[[https://github.com/thibaultlmt/QCustomToggleButton/blob/master/Output/Output.png|alt=output]]
